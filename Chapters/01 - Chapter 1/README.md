@@ -76,7 +76,7 @@ There are many serverside programming languages such as Deno.JS, Python, ASP, Ja
 
 Traditionally, javascript was only used in browsers. It wasn't until 2009 when Google Chrome's powerful Javascript Engine called V8 hit the scene when it all changed. 
 
-Not only did javascript work in the browser but it could be ran on the server and manipulate files. Now, Javascript developers can develop using javascript for serverside applications.
+Not only did javascript work in the browser but it could be ran on the server and manipulate files. Now, Javascript developers can develop using javascript for serverside applications and browser.
 
 What you need to know about the V8 Engine:
 
