@@ -13,4 +13,4 @@ app.get('/', (request, response)=>{ //passing a callback fn to get route
 
     })
 })
-console.log(`Listening on $(port)`);
+console.log(`Listening on ${port}`);
