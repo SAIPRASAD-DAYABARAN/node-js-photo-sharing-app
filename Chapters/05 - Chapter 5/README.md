@@ -95,12 +95,17 @@ npm install sequelize sequelize-cli mariadb
 npx sequelize init
 ```
 
+mariadb is required since we're going to be having the dialect of MariaDB. we're also gonna install body-parser 
+
 On some machines you may have success with this instead:
 
 ```bash
 npm install sequelize sequelize-cli mariadb
 sequelize init
 ```
+
+windows and some linux OSes sometimes work without npx, but try first npx sequelize init and if it doesn't work then try sequelize init 
+
 
 Some new files should be created specifically for sequelize which tries to stick with the MVC model. We don't need migrations and we don't need seeders so let's delete those.
 
