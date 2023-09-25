@@ -23,10 +23,10 @@ When a user connects to MariaDB, they don't connect to a specific database. Inst
 - A database is a container for database objects like tables and views
 - A database serves the following purposes:
 - - A database is a namespace
-- - A database is a logical container to separate object
+- - A database is a logical container to separate objects
 - - A database has a default character set and collation, which are inherited by their tables
 - - Permissions can be assigned on a whole database, to make permission maintenance simpler
-- - Physical data files are stored in a directory which has the same name as the database to which they belong
+- - Physical data files are stored in a directory which has the same name as the database to which they belong (i.e., physical data files are referenced)
 
 ---
 
@@ -76,7 +76,7 @@ The links are below, under the video description.
 
 Next, depending on your OS, run the installer and follow the prompts. Enter a difficult but memorable password when prompted to enter a new root password. If you are using Homebrew, you won't be prompted for anything.
 
-The purpose of the mysql_install_db program is to initialize the data directory, including the tables in the mysql system database. It does not overwrite existing MySQL privilege tables, and it does not affect any other data. To re-create your privilege tables, first stop the mysqld server if it is running
+The purpose of the mysql_install_db program is to initialize the data directory, including the tables in the MYSQL system database. It does not overwrite existing MySQL privilege tables, and it does not affect any other data. To re-create your privilege tables, first stop the mysqld server if it is running
 
 Once that's done, you need to install the MariaDB connector for Node.js called sequelize, more on that in the next video.
 
