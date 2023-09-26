@@ -126,6 +126,11 @@ CREATE DATABASE photos;
 
 This looks to see if the database exists, if it does, then it drop it but if it doesn't exist, it'll create it. 
 
+We'll use the newly created database
+```
+USE photos;
+```
+
 We need to connect sequelize configuration with our mariadb. Head over to our project directory, and look at config/config.json and make sure the database name matches what we just created (photos). We also need to change the dialect to `"mariadb"`. The password should also be set to `"password"`.
 
 It should look like this when it's complete:
@@ -158,7 +163,9 @@ It should look like this when it's complete:
 
 To create a connection, we specifiy the name of the database we want to connect to, the user we are connecting as, and the user's password to authorize the connection in our config/config.json. The host field is the server the database is running on. It can be set to localhost when our application and database are running on the same machine or the ip address (or Fully qualified domain) of the machine it is running on.
 
-Next we define a model (think of this as a database table). 
+And then, we're going to create our models. we need to define our models (think of this as a database table). 
+
+There is a index.js file inside /models. All this file does is it says if there is a Javascript file inside of models, read it as a table.
 
 We need to create a new file inside of /models directory called `PhotosModel.js`. Let's write some code in there:
 
