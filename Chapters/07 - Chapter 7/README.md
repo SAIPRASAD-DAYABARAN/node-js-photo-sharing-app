@@ -166,13 +166,13 @@ In the `UsersRouter.js` file, let's see if you can set it all by yourself! You g
 
 # 7.4 Special Note on Dumping the Database
 
-On our `server.js` file, let's dump all tables by updating the sync() function. Edit this line of code. It should be line 21 if you have followed along perfectly. Right after `db.sequalize`.
+On our `server.js` file, let's dump all tables by updating the sync() function. Edit this line of code. It should be line 21 or 25 if you have followed along perfectly. Right after `db.sequalize`.
 
 ```js
 .sync({force:true})
 ```
 
-This is great for troubleshooting and testing, we will want to revert this after our application is done. We will turn it off in Chapter 11.
+This is great for troubleshooting and testing(creating new user, deleting a user without having to create routes for deleting), we will want to revert this after our application is done. We will turn it off in Chapter 11.
 
 ---
 
