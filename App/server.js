@@ -12,9 +12,11 @@ app.set("view engine", "ejs");
 const PhotosRouter = require('./routes/PhotosRouter')
 const UsersRouter = require('./routes/UsersRouter')
 const CommentsRouter = require('./routes/CommentsRouter')
+const PageRouter = require('./routes/PageRouter')
 app.use('/images', PhotosRouter)
 app.use('/comments', CommentsRouter)
 app.use('/users', UsersRouter)
+app.use('/', PageRouter)
 
 //db
 //connecting to our db
@@ -41,11 +43,3 @@ app.listen(port, ()=>{
 
 //routes
 //we should create a GET request route for the whole path
-app.get("/", (request, response)=>{
-    response.render("index"); //res.render will look in a views folder the view
-})
-
-app.get("/photo", (request, response) => { //cb fn
-    console.log("/photo");
-    response.render("photo");
-  });
