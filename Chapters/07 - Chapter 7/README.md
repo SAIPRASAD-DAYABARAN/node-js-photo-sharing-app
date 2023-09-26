@@ -120,6 +120,9 @@ UsersRouter.route('/signUp')
 
 If we test this out, we should be redirected to a blank page, this is because we haven't created our `Login.ejs` code. That's next!
 
+But if we try to signup anyway, we get a message "You do not have an account. Try signing up". What's happening is we're getting the catch stmt from the login route(in UsersRoute.js:16) (coz we're going from one page to another and we're not persisting that user)
+
+Currently, we're getting an error when trying to sign up, and this error is caused coz the form will send an array with email, comma and null. So to fix this, on UsersRoute.js:28, change email to email[0]. and that should solve any signup problems we're currently having
 ---
 
 # 7.3 Login Page

@@ -25,8 +25,9 @@ UsersRouter.route('/signUp')
     const password = request.body.password
     const username = request.body.username
 
-    db.user.create({email: email, username: username, password: password }).then(user=>{
-      response.send(user)
+    db.user.create({email: email[0], username: username, password: password }).then(user=>{
+      //response.send(user) //instead of sending the user, we're going to redirect the user back to /login
+      response.redirect('/login');
     }).catch((error) => {
         response.send("You do not have an account. Try signing up!")
     })
