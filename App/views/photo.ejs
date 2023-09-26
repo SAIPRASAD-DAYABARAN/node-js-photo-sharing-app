@@ -1,0 +1,34 @@
+<%- include('partials/header'); %>
+  <%- include('partials/navbar'); %>
+</body>
+  <!-- Main -->
+  <div class="container">
+    <!---some form with post method and it goes to /images. we also need to specify encryption type(some multipart form data). This is important
+        with multer. This allows you to send a form with a file on it.
+    -->
+    <form action="/images" method="POST" enctype="multipart/form-data">
+      <div class="control-group">
+        <div class="form-group floating-label-form-group controls">
+          <label for="title">Title</label>
+          <input type="text" class="form-control" id="title" name="title" required/>
+          <!---we  'require' all the data fields here-->
+          <!---again for and id and name matches. the name="" is what really matters here-->
+        </div>
+        <br />
+        <div class="form-group floating-label-form-group controls">
+          <label for="photo">Image</label>
+          <!-- we can also specify what we can accept. So this isn't the most secure method of preventing people from uploading nonimages
+        PART OF overall formula for securing our website -->
+          <input type="file" class="form-control" id="photo" name="photo" accept="image/jpeg, image/jpg, image/png, image/gif" required/>
+        </div>
+        <br />
+        <div class="form-group">
+          <button type="submit" class btn btn-primary id="sendMessaageButton">
+            <!---when you click this button, it sends a POST request to /images with the title and photo.
+            the for="" label, the id, and the name, all three of those match up. the name="photo" is the photo that we set when we used Insomnia-->
+            Upload
+          </button>
+        </div>
+  </div>
+
+<%-include('partials/footer'); %>

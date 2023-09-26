@@ -475,6 +475,8 @@ app.get("/photo", (request, response) => {
   response.render("photo");
 });
 ```
+Now photo doesn't exist, so we're gonna have to create it(i.e., views/photo.ejs)
+
 
 In our `PhotosRouter.js` we want to redirect our user back to the home page to view their photo in the collage so let's do that now by editing a line.
 
@@ -532,6 +534,7 @@ Let's go ahead and test our application!
 - You'll have a new page where you can add a title and select a photo for upload
 - Click `Upload`
 - Your photo will be in the `public/images` directory!
+-Also we should get a json response in the browser
 
 ---
 

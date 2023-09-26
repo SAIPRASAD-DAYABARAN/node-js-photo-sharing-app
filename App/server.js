@@ -44,3 +44,8 @@ app.listen(port, ()=>{
 app.get("/", (request, response)=>{
     response.render("index"); //res.render will look in a views folder the view
 })
+
+app.get("/photo", (request, response) => { //cb fn
+    console.log("/photo");
+    response.render("photo");
+  });

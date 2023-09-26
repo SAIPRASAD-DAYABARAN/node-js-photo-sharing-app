@@ -51,7 +51,10 @@ const fileStorageEngine = multer.diskStorage({
       .create({ title: title, mediaLocation: mediaLocation }) //variable: property
       .then((photo) => { //arrow fn
         console.log("POST IMAGES");
-        response.send(photo); //responding back with the photo we just created
+        //response.send(photo);  //rewritten in ch6.12 to redirect to homepage
+        //responding back with the photo (photoJSON actually) we just created
+        //right now when we a Photosroute POST request we are taken to that photojson
+        response.redirect('/');
       })
       .catch((error) => {
         response.send(error);
