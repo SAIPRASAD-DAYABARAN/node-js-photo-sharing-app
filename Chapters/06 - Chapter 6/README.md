@@ -241,7 +241,7 @@ const multer = require("multer");
 
 One thing to note is we will call the router `PhotosRouter` instead of app like we did in `server.js`. 
 
-To store images, we need to tell Multer where to store them - this code comes from the Multer docs in case you are wondering.
+To store images, we need to tell Multer where to store them(and then we want to specify the destinantion in in /public/images. We also don't wanna allow photos to be uploaded that don't meet our criteria) - this code comes from the Multer docs in case you are wondering.
 
 [Mutler npm page - https://www.npmjs.com/package/multer](https://www.npmjs.com/package/multer) 
 
