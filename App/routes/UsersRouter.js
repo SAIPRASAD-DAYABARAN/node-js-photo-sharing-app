@@ -12,7 +12,8 @@ UsersRouter.route('/login') //creating a route for login.(more of like an api)
     const username = request.body.username
     db.user.findOne( //sequelizse syntax. findOne?
         {where:{username: username, password: password}}).then(user=>{ 
-        response.send(user)
+        //response.send(user)
+        response.redirect('/')
     }).catch(err=>{  //in video .catch( (error) => {})
         response.send('You don\'t have an account. Try signing up!')
     })
