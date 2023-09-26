@@ -51,7 +51,7 @@ const fileStorageEngine = multer.diskStorage({
       .create({ title: title, mediaLocation: mediaLocation }) //variable: property
       .then((photo) => { //arrow fn
         console.log("POST IMAGES");
-        response.send(photo);
+        response.send(photo); //responding back with the photo we just created
       })
       .catch((error) => {
         response.send(error);

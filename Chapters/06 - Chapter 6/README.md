@@ -444,7 +444,7 @@ In insomnia run the following GET request to http://localhost:8080, you should s
 Create a `POST` request to `/images`. Here are the steps:
 
 - Select `POST` from the method dropdown (it will be set to `GET` by default
-- Choose `Multipart Form` under `Body' dropdown
+- Choose `Multipart Form` under `Body' dropdown(this would be like making an HTML form)
 - Then provide two name/value pairs
 - - Provide a `title` name and value first
 - - Then provide a `file` name and value (for the value, use any JPEG laying around, use the dropdown on the right side to choose a file) 
