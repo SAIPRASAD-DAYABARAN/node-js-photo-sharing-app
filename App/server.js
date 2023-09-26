@@ -8,6 +8,13 @@ app.use(bodyParser.json()) //we've added bodyParser with the ability to parse js
 app.use(express.static('public')) // this line will enable everything in /public to be served up as a static file
 app.set("view engine", "ejs");
 
+//we need to require the foll before we can use them
+const PhotosRouter = require('./routes/PhotosRouter')
+const UsersRouter = require('./routes/UsersRouter')
+const CommentsRouter = require('./routes/CommentsRouter')
+app.use('/images', PhotosRouter)
+app.use('/comments', CommentsRouter)
+app.use('/users', UsersRouter)
 
 //db
 //connecting to our db

@@ -14,12 +14,13 @@ There are a few types on middleware namely:
 -   Error-handling middleware
 -   Built-in middleware
 -   Third-party middleware
+- There's also custom middleware
 
 ---
 
 # 6.2 Application-Level Middleware
 
-This is bound to an instance of the [`app`](../Chapter%202/What%20is%20express.md) object. Here is an **example**.
+This app.use or app.set is bound to an instance of the [`app`](../Chapter%202/What%20is%20express.md) object. Here is an **example**.
 
 ```js
 const express = require("express");
@@ -32,6 +33,9 @@ app.use((req, res, next) => {
 ```
 
 In the following example a mount path or route is specified. The path specifies the routes the middleware acts on.
+
+Here is an example where it's bound to the route /user/id and the mount path or route that specified limits what the middleware can act on.
+
 
 ```js
 app.use("/user/:id", (req, res, next) => {
@@ -58,6 +62,8 @@ router.use((req, res, next) => {
 ```
 
 Now specifying a path
+
+/user/id This route is where (route.use) is limited to. 
 
 ```js
 router.use("/user/:id", (req, res, next) => {
@@ -87,7 +93,7 @@ Express has the following built-in middleware functions:
 
 -   `express.static` serves static assets such as HTML files, images, and so on
 -   `express.json` parses incoming requests with JSON payloads
--   `express.urlencoded` parses incoming requests with URL-encoded payload
+-   `express.urlencoded` parses incoming requests with URL-encoded payloads
 
 ---
 
@@ -128,6 +134,8 @@ npm install express-validation #WE AREN'T DOING THIS
 
 Below is an example application that uses the middleware to ensure that a valid `email` and `password` are submitted.
 
+below is an eg where we're checking if the body is an email or passwd with a min length of five
+
 ```js
 const express = require("express");
 const bodyParser = require("body-parser");
@@ -165,7 +173,7 @@ References
 
 All middleware functions in Express.js accept three arguments following the request (`req`), response (`res`), and (`next`) lifecycle methods.
 
-Our custom middleware is simply a function that accepts thes three arguments.
+Our custom middleware is simply a function that accepts these three arguments.
 
 ```js
 ...
@@ -184,7 +192,7 @@ app.use(myCustomMiddleware);
 
 ### Handling File Uploads in Express
 
-To handle file uploads in express we use the `Multer` library. From their readme "Multer adds a body object and a file or files object to the request object. The body object contains the values of the text fields of the form, the file or files object contains the files uploaded via the form."
+To handle file uploads in express we use the `Multer` library. From their readme "Multer adds a body object and a file or files object to the request object. This body object contains the values of the text fields of the form, the file or files object contains the files uploaded via the form." (in short, it accepts form data, including files)
 
 Let's install it in our project, yes, we're actually doing this one :)
 
@@ -213,6 +221,8 @@ const PhotosRouter = require('./routes/PhotosRouter')
 const CommentsRouter = require('./routes/CommentsRouter')
 const UsersRouter = require('./routes/UsersRouter')
 ```
+
+try npm run dev, we'll get error. (index.js:469 for the router). This is because we don't have any actual middleware in there(there's no function)
 
 ---
 
