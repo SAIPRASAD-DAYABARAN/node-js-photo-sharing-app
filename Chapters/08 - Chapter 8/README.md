@@ -197,7 +197,7 @@ We've now technically, forced cookies
 
 # 8.4 Conditionally Display Add Photo, Login, Signup Links
 
-The following code will ensure that when we call an if statement looking to see if a user is logged in or not, we can easily in EJS. Place this in your `server.js file` below the the 'expressSession, secret' block we did in 8.2.
+The following code will ensure that when we call an if statement looking to see if a user is logged in or not,then we can conditionally display a HTML easily using EJS. Place this in your `server.js file` below the the 'expressSession, secret' block we did in 8.2.
 
 ```js
 global.loggedIn = null;

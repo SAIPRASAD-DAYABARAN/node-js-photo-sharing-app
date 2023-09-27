@@ -9,6 +9,12 @@ app.use(expressSession({
     secret: 'Drew Loves Kinsta'
 }))
 
+global.loggedIn = null; //nobody's logged in by default
+app.use("*", (request, response, next) => { // * - any route
+  loggedIn = request.session.userId; //and since this is middleware its got the third call(p/m?) next, so we're gonna include next fn at the end.
+  next();
+});
+
 app.use(bodyParser.json()) //we've added bodyParser with the ability to parse json
 app.use(express.static('public')) // this line will enable everything in /public to be served up as a static file
 app.set("view engine", "ejs");
