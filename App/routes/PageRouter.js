@@ -36,4 +36,10 @@ PageRouter.get("/photo", (request, response) => { //cb fn
     response.render("signUp");
   });
   
+  PageRouter.get("/logout", (request, response) => { //passing a cb fn. arrow fn
+    console.log("User Logged Out - ", request.session.userId); //so that we'll know which user was logged out
+    request.session.destroy(() => { // arrow fn. anonymous and nothing to pass into it
+      response.redirect("/login");
+    });
+  });
   module.exports = PageRouter;

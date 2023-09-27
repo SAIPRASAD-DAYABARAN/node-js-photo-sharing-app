@@ -284,6 +284,7 @@ PageRouter.get("/logout", (request, response) => {
 ```
 
 Way easier than you thought huh?
+Always test it by running npm run dev
 
 ---
 
