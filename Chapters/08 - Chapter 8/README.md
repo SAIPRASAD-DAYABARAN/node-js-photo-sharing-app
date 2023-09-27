@@ -126,6 +126,10 @@ Save the file.
 
 ![ka-node-jw-8 6-photo-fix2s](https://user-images.githubusercontent.com/9747248/212399832-ef9d2f17-0c07-4ce0-9520-7bb06574ad94.png)
 
+
+connect.sid is the session.
+
+we'll implement this user session, so that we can actually persist user state across pages
 ---
 
 # 8.3 Implementing User Sessions
