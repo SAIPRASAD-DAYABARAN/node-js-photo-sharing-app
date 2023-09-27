@@ -93,7 +93,7 @@ PageRouter.get("/*", (request, response) => {
 
 If you made this the first item on the list, express would pick it up first and not check any other routes.
 
-Let's create a 404 page that renders instead of an error page for a little more graceful failure. In /views directory, add a file called 404.ejs.
+Let's create a 404 page(which doesn't exist yet) that renders instead of an error page for a little more graceful failure. In /views directory, add a file called 404.ejs.
 
 ```js
 <%- include('partials/header'); %>
@@ -112,7 +112,7 @@ PageRouter.get("/*", (request, response) => {
   response.render("404"); // this line
 });
 ```
-
+run, npm run dev and check if you're getting 404 page
 ---
 
 # 10.5 Sanitizing Files

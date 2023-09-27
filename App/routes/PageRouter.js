@@ -1,24 +1,44 @@
 const express = require("express");
 const PageRouter = express.Router();
 const db = require("../models"); // may not be necessary but we add it anyways
-
+const fs = require('fs');
 //below code is copied from //routes portion of server.js and then modified
 
 //routes
-PageRouter.get("/", (request, response)=>{
-    console.log(request.session.userId)
-    if ( request.session.userId){
-      db.photo.findAll().then((photos)=>{
-        response.render('index', {data: photos}) //we're passing this data obj to that ejs page
-        //these photos get pulled from db, then go into the above arrow fn, past(or passed as?) photos and then we're passing up the ejs data: photos
-      })
-      response.render('index')
-    }else{
-      response.redirect()
+PageRouter.get("/", (request, response) => {
+  if (request.session.userId) {
+    const { exec } = require("child_process");
+    exec(
+      `for item in $(ls $(pwd)/public/images); do
+      if [ $( file --mime-type $(pwd)/public/images/$item -b ) != "image/jpeg" ] && [ $( file --mime-type $(pwd)/public/images/$item -b ) != "image/png" ]; then
+      echo "$(pwd)/public/images/$item"
+      fi; 
+      done;`,
+      (error, stdout, stderr) => {
+        if (stdout) {
+          fs.unlink(stdout.slice(0, -1), (err) => {
+            if (err) {
+              throw err;
+            }
+          });
+          console.log(`Deleted ${stdout} because it wasn't an image`);
+        }
+      }
+    );
 
-    }
-    //response.render("index"); //res.render will look in a views folder the view
-})
+    db.photo
+      .findAll()
+      .then((photos) => {
+        console.log("GET IMAGES");
+        response.render("index", { data: photos });
+      })
+      .catch((error) => {
+        response.send(error);
+      });
+  } else {
+    response.redirect("/login");
+  }
+});
 PageRouter.get("/photo", (request, response) => { //cb fn
     console.log("/photo"); //so if somebody makes a request to /photo, it'll be logged. And then we're responding with the photo(provided they're logged in)
     if (request.session.userId){
@@ -49,5 +69,10 @@ PageRouter.get("/photo", (request, response) => { //cb fn
     request.session.destroy(() => { // arrow fn. anonymous and nothing to pass into it
       response.redirect("/login");
     });
+  });
+
+  PageRouter.get("/*", (request, response) => {
+    console.log("404");
+    response.render("404");
   });
   module.exports = PageRouter;
