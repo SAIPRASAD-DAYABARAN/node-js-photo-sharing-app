@@ -33,7 +33,11 @@ PageRouter.get("/photo", (request, response) => { //cb fn
 
   PageRouter.get("/login", (request, response) => {
     console.log("/LOGGING IN!");
-    response.render("login");
+    response.render("login", {data: ""}); //we're gonna pass data to our login
+  });
+  PageRouter.get("/badlogin", (request, response) => {
+    console.log("/LOGGING IN!");
+    response.render("login", {data: "Bad Login Credentials"}); //we're gonna pass data to our login
   });
   PageRouter.get("/signUp", (request, response) => {
     console.log("/signUp");

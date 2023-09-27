@@ -35,7 +35,7 @@ Right now if we try to log in with the wrong credentials, we get a time out. Let
 
 So now we are sending a response status and we are logging it but there is no way to tell what was the problem from the frontend so we have to create the route for /badlogin.
 
-In our PageRouter.js, let's create a new route called "badlogin" that renders the login page. Now the way we are going to do things, we have to pass data to the ejs template and since we load the login page with or without data we have to pass data to the regular login as well. Let me show you what I mean:
+In our PageRouter.js, let's create a new route called "badlogin" that renders the login page(and we're gonna edit our login route). Now the way we are going to do things, we have to pass data to the ejs template and since we load the login page with or without data we have to pass data to the regular login as well. Let me show you what I mean:
 
 ```js
 PageRouter.get("/login", (request, response) => {
@@ -55,6 +55,10 @@ Now all we have to do is add the following code to our login.ejs inside the cont
      <%= "Wrong Credentials" %>
    <% } %>
 ```
+
+Test it out by running npm run dev.
+
+if we give a bad username we get no such user and if we give a bad password we get wrong credentials
 ---
 
 # 10.3 Adding Additional Logging With Morgan

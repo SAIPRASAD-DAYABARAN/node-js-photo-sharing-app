@@ -22,9 +22,13 @@ UsersRouter.route('/login') //creating a route for login.(more of like an api)
                         request.session.userId = user.id;
                         response.redirect('/')
                     }else{
-                        response.redirect('/login')
+                        response.status(401)
+                        console.log("401 error")
+                        response.redirect('/badlogin')
                     }
                 })
+            }else{
+                response.send("No such user")
             }
         //response.send(user)
         //response.redirect('/')
