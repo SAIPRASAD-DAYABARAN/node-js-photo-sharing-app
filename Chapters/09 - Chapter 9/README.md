@@ -120,7 +120,7 @@ Let's start by creating the comment link on our image. We do this by editing our
     <%- include('partials/footer'); -%>
 ```
 
-We grab the `photoId` value and pass it to our `/comments/` path. This will trigger a get request to our`/comments/:id` path.
+We grab the `photoId` value. So the next thing we have to do after grabbing the photoId value is to pass it to our `/comments/` path. This will trigger a get request to our`/comments/:id` path.(yet to be created)
 
 So Let's head over to our `routes/CommentsRouter.js` file and make some changes:
 

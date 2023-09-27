@@ -30,7 +30,10 @@
 								><img src="./images/<%= data[i].dataValues.mediaLocation %>"" alt="<%= data[i].dataValues.title %>"
 							  /></a>
 							  <h2><%= data[i].dataValues.title %></h2>
-							  
+							  <p> 🎙 Read or Add 
+								<a href="/comments/<%= data[i].dataValues.id %>">Comments</a> <!---we're gonna have a link to data.dataValues.(photo)id.
+								So we're gonna go to /comments/photoId-->
+							  </p>
 							</article>
 						  </article>
 						  <% } %>
