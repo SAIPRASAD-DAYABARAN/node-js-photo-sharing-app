@@ -8,6 +8,10 @@ const db = require("../models"); // may not be necessary but we add it anyways
 PageRouter.get("/", (request, response)=>{
     console.log(request.session.userId)
     if ( request.session.userId){
+      db.photo.findAll().then((photos)=>{
+        response.render('index', {data: photos}) //we're passing this data obj to that ejs page
+        //these photos get pulled from db, then go into the above arrow fn, past(or passed as?) photos and then we're passing up the ejs data: photos
+      })
       response.render('index')
     }else{
       response.redirect()

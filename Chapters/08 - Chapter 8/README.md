@@ -294,6 +294,6 @@ Everything user login related can be really hard if you don't know what you are 
 
 We have learned a ton in this chapter so lets recap.
 
-The first thing we did was ensure that users logging in were storing their passwords securely. They could then login securely by leveraging `bcryptjs` compare feature. we put all that together and created some EJS logic to enable our links to only show up when a user was logged in. Speaking of, we learned how to make a user stay logged in using `express-sessions` and then how to destroy that cookie we created in order to log out.
+The first thing we did was ensure that users logging in were storing their passwords securely. They could then login securely by leveraging `bcryptjs` compare feature. we put all that together and created some EJS logic to enable our links to only show up when a user was logged in(or logged out). Speaking of, we learned how to make a user stay logged in using `express-sessions` and then how to destroy that cookie we created in order to log out.
 
 You're doing great, keep it up! I'll see you in the next chapter where we learn about how to connect comments to a user.

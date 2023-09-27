@@ -33,7 +33,7 @@ const fileStorageEngine = multer.diskStorage({
       .findAll()
       .then((photos) => { //any found photos, were gonna pass those
         console.log("GET IMAGES");
-        response.redirect('/');
+        response.redirect('/'); //comment this line or not?
       })
       .catch((error) => { //arrow fn
         response.send(error);

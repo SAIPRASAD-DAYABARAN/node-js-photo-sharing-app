@@ -8,7 +8,7 @@ To do this we have to first make a call similar to our `PhotosRouter.js` where w
 PhotosRouter.route("/")
   .get((request, response) => {
     db.photo
-      .findAll()
+      .findAll() //we'll have to make a similar call in pagerouter.js
       .then((photos) => {
         console.log("GET IMAGES");
         response.send(photos); 
@@ -46,6 +46,11 @@ Now that our EJS template is receiving all the photo data, we have to tell EJS w
 
 The easiest way to determine the location of the data you need is to output `console.log(data)` inside the EJS template so you can see how the data is structured.
 
+run npm run dev. homepage is no longer displaying
+we're looking a blank array in console.log 
+
+Add a photo and upload. We'll see one record in its entirety. this is the data we need
+
 Right now the main/index page is full of sample photos and 'Lorem ipsum' placeholder text. Let's change that to be live photo data from our JS server. Replace all the code in your `/views/index.ejs` file with this:
 
 ```js
@@ -78,6 +83,7 @@ Right now the main/index page is full of sample photos and 'Lorem ipsum' placeho
             Nunc blandit nisi ligula magna sodales lectus elementum non. Integer
             id venenatis velit.
           </p>
+          <!---we can delete this para if needed--->
         </article>
       </article>
       <% } %>
