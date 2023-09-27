@@ -167,7 +167,7 @@ UsersRouter.route("/login").post(async (request, response) => {
 });
 ```
 
-To implement checking for a session id before allowing a user to add a photo, in our `PageRouter.js` we need to add a new line.
+To implement checking for a session id before allowing a user to add a photo(i.e., we don't want anyone that aren't logged in, to upload photos ), in our `PageRouter.js` we need to add a new line.
 
 ```js
 PageRouter.get("/", (request, response) => {
@@ -190,6 +190,8 @@ PageRouter.get("/photo", (request, response) => {
   }
 });
 ```
+
+We've now technically, forced cookies
 
 ---
 

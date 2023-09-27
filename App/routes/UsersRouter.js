@@ -19,6 +19,7 @@ UsersRouter.route('/login') //creating a route for login.(more of like an api)
                 bcrypt.compare(password, user.password, (error, same) =>{ // passing a cb fn
                     if(same){
                         console.log("logged in, USER ID =", user.id)
+                        request.session.userId = user.id;
                         response.redirect('/')
                     }else{
                         response.redirect('/login')
