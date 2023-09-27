@@ -83,6 +83,8 @@ UsersRouter.route("/login").post(async (request, response) => {
 
 Again, let's test it to make sure it works.
 
+Now when we test this, it's still not going to persist that user from one page to another, so we'll still probably get the catch on line 30
+
 ---
 
 # 8.2 User Authentication with Express Sessions
