@@ -47,6 +47,13 @@ Go to applications.
 Select Application and fill out the form - be sure to select your github repository. and the default branch.
 
 Select setup container image automatically and click Continue. Name it(process) photoshare. Start command is npm start. Continue. confirm payment
+
+continue to deploy and it should fail since we haven't set up mariadb yet.
+
+Add application -> photoshare, inside mariadb . this enables firewall to our db
+
+Click connection details. copy the details on internal connections popup and go to config.json. replace host(under development) with hostname details from popup. copy and paste username and password from pop up to username and password under test?. 
+Make sure database name matches. (do a git add . ; and git commit -m "update config.json" to make it reflect in my.kinsta.com)
 ![https://p289.p2.n0.cdn.getcloudapp.com/items/p9uQm4bw/e968d8e7-832b-46eb-8122-9ff2ba1bcaf4.jpg?v=aafbd5d046ee3a530b317e575bac00eb](https://p289.p2.n0.cdn.getcloudapp.com/items/p9uQm4bw/e968d8e7-832b-46eb-8122-9ff2ba1bcaf4.jpg?v=aafbd5d046ee3a530b317e575bac00eb)
 
 Next we need to add another service except this time it needs to be a database.
