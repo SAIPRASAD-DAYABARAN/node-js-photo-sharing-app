@@ -3,6 +3,7 @@ const app = new express();
 const db = require('./models');
 //we only have to say ./models because pulling from index.js, and index.js is defining the model i.e., our database
 const bodyParser = require('body-parser');
+const logger = require("morgan");
 const expressSession = require('express-session');
 
 app.use(expressSession({
@@ -16,6 +17,7 @@ app.use("*", (request, response, next) => { // * - any route
 });
 
 app.use(bodyParser.json()) //we've added bodyParser with the ability to parse json
+app.use(logger("dev"));
 app.use(express.static('public')) // this line will enable everything in /public to be served up as a static file
 app.set("view engine", "ejs");
 
