@@ -39,8 +39,14 @@ Go to Applications
 Select "add service"
 ![https://p289.p2.n0.cdn.getcloudapp.com/items/d5undQvZ/f1d1eb23-69bc-4e1b-b10d-ffe2f26766aa.jpg?v=830d4b31b088c3ec4d4b140f923b1c6e](https://p289.p2.n0.cdn.getcloudapp.com/items/d5undQvZ/f1d1eb23-69bc-4e1b-b10d-ffe2f26766aa.jpg?v=830d4b31b088c3ec4d4b140f923b1c6e)
 
-Select Application and fill out the form - be sure to select your github repository.
+Select database, call db mmariadb, choose datacenter close to you. 
+Go to server.js and make sure port is 3306
 
+Go to applications.
+
+Select Application and fill out the form - be sure to select your github repository. and the default branch.
+
+Select setup container image automatically and click Continue. Name it(process) photoshare. Start command is npm start. Continue. confirm payment
 ![https://p289.p2.n0.cdn.getcloudapp.com/items/p9uQm4bw/e968d8e7-832b-46eb-8122-9ff2ba1bcaf4.jpg?v=aafbd5d046ee3a530b317e575bac00eb](https://p289.p2.n0.cdn.getcloudapp.com/items/p9uQm4bw/e968d8e7-832b-46eb-8122-9ff2ba1bcaf4.jpg?v=aafbd5d046ee3a530b317e575bac00eb)
 
 Next we need to add another service except this time it needs to be a database.
