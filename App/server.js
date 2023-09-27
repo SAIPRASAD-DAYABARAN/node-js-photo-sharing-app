@@ -35,7 +35,7 @@ app.use('/', PageRouter)
 //connecting to our db
 const sqlPort = 3306; //3306 or 3307 by default
 db.sequelize
-    .sync({force:true}) //sync connects our db and makes it update
+    .sync({}) //sync connects our db and makes it update
     .then(()=>{ //passing an anonymous arrow function to then
         app.listen(sqlPort, ()=>{
             console.log(
